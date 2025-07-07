@@ -1,48 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My GitHub Pages Site</title>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Blog</title>
   <style>
     body {
+      font-family: Cambria, serif;
+      font-size: 16px;
+      line-height: 1.5;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+    }
+    header {
+      background: #f0f0f0;
+      padding: 10px 20px;
       display: flex;
-      justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      justify-content: space-between;
     }
-    .container {
-      text-align: center;
-      padding: 2rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    header h1 {
+      margin: 0;
     }
-    h1 {
-      color: #2c3e50;
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 15px;
     }
-    p {
-      margin-top: 1rem;
-    }
-    a {
-      color: #007acc;
+    nav a {
       text-decoration: none;
+      color: #333;
     }
-    a:hover {
-      text-decoration: underline;
+    img.featured {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px 0;
+    }
+    main {
+      padding: 0 20px;
+    }
+    article {
+      margin-bottom: 2em;
+    }
+    article h2 {
+      margin: 0.2em 0;
+    }
+    article time {
+      font-size: 0.9em;
+      color: #666;
+    }
+    footer {
+      background: #f0f0f0;
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome to My Website 👋</h1>
-    <p>This is a simple static site hosted for free with <strong>GitHub Pages</strong>.</p>
-    <p><a href="https://github.com">Visit GitHub</a></p>
-  </div>
+  <header>
+    <h1>My Blog Title</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Featured image on homepage -->
+    <img src="317fig1.png" alt="Abstract colorful fractal design" class="featured">
+
+    <!-- Blog post 1 -->
+    <article>
+      <h2>First Blog Post</h2>
+      <time datetime="2025-07-07">July 7, 2025</time>
+      <p>This is the content of the first blog post. It has a visible timestamp above.</p>
+    </article>
+
+    <!-- Blog post 2 -->
+    <article>
+      <h2>Another Post</h2>
+      <time datetime="2025-07-05">July 5, 2025</time>
+      <p>More blog content goes here for the second post.</p>
+    </article>
+  </main>
+
+  <footer>
+    © 2025 My Blog. All rights reserved.
+  </footer>
+</body>
+</html>
+Explanation: This index.html uses <header> and <nav> for the site title and links
+developer.mozilla.org
+developer.mozilla.org
+. The image (317fig1.png) appears with width:100% via the .featured class, making it prominent and responsive
+w3schools.com
+. Each <article> has an <h2> title and a <time> element with a datetime attribute, per HTML5 norms
+developer.mozilla.org
+developer.mozilla.org
+. The CSS block at top sets Cambria as the font and ensures readable spacing (e.g. line-height:1.5
+digitalocean.com
+).
+About Page (about.html)
+The About page uses a similar structure (same <head> and styles) but with different main content. For example:
+html
+Másolás
+Szerkesztés
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Me</title>
+  <style>
+    /* (Same internal CSS as index.html, reused for consistency) */
+    body { font-family: Cambria, serif; font-size: 16px; line-height: 1.5; margin: 0; padding: 0; }
+    header { background: #f0f0f0; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; }
+    header h1 { margin: 0; }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 15px; }
+    nav a { text-decoration: none; color: #333; }
+    main { padding: 0 20px; }
+    footer { background: #f0f0f0; padding: 10px 20px; text-align: center; font-size: 0.9em; color: #666; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Blog Title</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>About Me</h2>
+    <p>This is the About page. It uses the same styles and font. You can write information about the blog or author here. Hungarian characters like ő, ű will display correctly thanks to UTF-8 encoding.</p>
+  </main>
+
+  <footer>
+    © 2025 My Blog.
+  </footer>
 </body>
 </html>
