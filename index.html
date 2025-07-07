@@ -96,57 +96,6 @@
   </footer>
 </body>
 </html>
-Explanation: This index.html uses <header> and <nav> for the site title and links
-developer.mozilla.org
-developer.mozilla.org
-. The image (317fig1.png) appears with width:100% via the .featured class, making it prominent and responsive
-w3schools.com
-. Each <article> has an <h2> title and a <time> element with a datetime attribute, per HTML5 norms
-developer.mozilla.org
-developer.mozilla.org
-. The CSS block at top sets Cambria as the font and ensures readable spacing (e.g. line-height:1.5
-digitalocean.com
-).
-About Page (about.html)
-The About page uses a similar structure (same <head> and styles) but with different main content. For example:
-html
-Másolás
-Szerkesztés
-<!DOCTYPE html>
-<html lang="hu">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Me</title>
-  <style>
-    /* (Same internal CSS as index.html, reused for consistency) */
-    body { font-family: Cambria, serif; font-size: 16px; line-height: 1.5; margin: 0; padding: 0; }
-    header { background: #f0f0f0; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; }
-    header h1 { margin: 0; }
-    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 15px; }
-    nav a { text-decoration: none; color: #333; }
-    main { padding: 0 20px; }
-    footer { background: #f0f0f0; padding: 10px 20px; text-align: center; font-size: 0.9em; color: #666; }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>My Blog Title</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <h2>About Me</h2>
-    <p>This is the About page. It uses the same styles and font. You can write information about the blog or author here. Hungarian characters like ő, ű will display correctly thanks to UTF-8 encoding.</p>
-  </main>
-
-  <footer>
-    © 2025 My Blog.
-  </footer>
 </body>
 </html>
