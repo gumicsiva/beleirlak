@@ -1,109 +1,133 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Blog</title>
   <style>
     body {
+      margin: 0;
       font-family: Cambria, serif;
-      font-size: 16px;
-      line-height: 1.5;
-      margin: 0;
+      display: flex;
+      flex-direction: row;
+    }
+    aside {
+      background-color: #f4f4f4;
+      width: 250px;
+      min-height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    aside h2 {
+      font-size: 1.2em;
+      margin-top: 0;
+    }
+    aside ul {
+      list-style-type: none;
       padding: 0;
     }
-    header {
-      background: #f0f0f0;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    aside ul li {
+      margin-bottom: 10px;
     }
-    header h1 {
-      margin: 0;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 15px;
-    }
-    nav a {
+    aside ul li a {
       text-decoration: none;
       color: #333;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .post {
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .post-header {
+      cursor: pointer;
+      background-color: #e0e0e0;
+      padding: 10px;
+    }
+    .post-content {
+      display: none;
+      padding: 10px;
     }
     img.featured {
       width: 100%;
       height: auto;
-      display: block;
-      margin: 20px 0;
+      margin-bottom: 20px;
     }
-    main {
-      padding: 0 20px;
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      aside {
+        width: 100%;
+        display: none;
+      }
+      aside.open {
+        display: block;
+      }
+      .menu-toggle {
+        display: block;
+        padding: 10px;
+        background: #333;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+      }
     }
-    article {
-      margin-bottom: 2em;
-    }
-    article h2 {
-      margin: 0.2em 0;
-    }
-    article time {
-      font-size: 0.9em;
-      color: #666;
-    }
-    footer {
-      background: #f0f0f0;
-      padding: 10px 20px;
-      text-align: center;
-      font-size: 0.9em;
-      color: #666;
+    .menu-toggle {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Beleírlak</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Történet</a></li>
-        <li><a href="about.html">Mi ez?</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="menu-toggle" onclick="toggleSidebar()">☰ Menü</div>
+  <aside id="sidebar">
+    <h2>Bejegyzések</h2>
+    <ul>
+      <li><a href="post1.html">Első bejegyzés</a></li>
+      <li><a href="post2.html">Második bejegyzés</a></li>
+      <li><a href="post3.html">Harmadik bejegyzés</a></li>
+      <li><a href="about.html">Rólam</a></li>
+    </ul>
+  </aside>
 
   <main>
-    <!-- Featured image on homepage -->
-    <img src="317fig1.png" alt="Abstract colorful fractal design" class="featured">
+    <img src="317fig1.png" alt="Fraktál" class="featured">
 
-    <!-- Blog post 1 -->
-    <article>
-      <h2>First Blog Post</h2>
-      <time datetime="2025-07-07">July 7, 2025</time>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu eleifend leo. Donec urna nunc, ultrices non neque a, semper sagittis odio. Aenean vitae dolor et mauris scelerisque porta. In tincidunt libero tellus, in iaculis urna congue eu. Nam dolor neque, consectetur ac tellus sit amet, laoreet lobortis nisi. Maecenas consectetur posuere erat. Integer gravida metus orci, nec posuere nunc gravida nec.
+    <div class="post">
+      <div class="post-header" onclick="togglePost(this)">Első bejegyzés – <time datetime="2025-07-07">2025. július 7.</time></div>
+      <div class="post-content">
+        <p>Kattints a címre a bejegyzés megtekintéséhez. Teljes szöveg külön fájlban: <a href="post1.html">post1.html</a></p>
+      </div>
+    </div>
 
-Proin non odio orci. Nam nec urna sed ipsum venenatis scelerisque. Sed a diam vitae lorem mollis elementum rutrum quis sapien. Mauris sed diam id nunc iaculis ornare. Duis nec lobortis odio, viverra egestas diam. Aenean tempor dui id ultricies auctor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque odio felis, rhoncus eu ipsum ut, ultrices faucibus lorem. In eu aliquam dolor. Nulla facilisi. Etiam pretium nisi mauris, in placerat ante aliquet quis. Sed maximus magna lectus, eu egestas tortor viverra in.
+    <div class="post">
+      <div class="post-header" onclick="togglePost(this)">Második bejegyzés – <time datetime="2025-07-06">2025. július 6.</time></div>
+      <div class="post-content">
+        <p>Kattints a címre a bejegyzés megtekintéséhez. Teljes szöveg külön fájlban: <a href="post2.html">post2.html</a></p>
+      </div>
+    </div>
 
-Aenean eget quam ullamcorper, feugiat odio in, placerat quam. Suspendisse ut eros dolor. Vestibulum lacus sapien, scelerisque at sem in, facilisis suscipit felis. Aenean tempus est at massa commodo vestibulum. Donec ut ipsum bibendum, vehicula odio non, pretium lectus. Praesent maximus, metus commodo vulputate imperdiet, augue orci commodo metus, eget dictum ante nibh vitae libero. Vestibulum neque enim, ultrices iaculis orci in, pellentesque bibendum odio. Fusce euismod arcu et enim tempus, pulvinar posuere enim auctor.
-
-Fusce faucibus aliquet lacus. Praesent vitae urna ex. Sed cursus erat nulla, in vulputate lectus efficitur vel. Etiam tempor rutrum magna sed facilisis. Sed sed tellus aliquam, mattis nisl ac, laoreet turpis. Etiam varius, neque eget convallis congue, ipsum mauris maximus sapien, at iaculis magna enim a purus. Sed ex augue, sollicitudin et hendrerit non, fermentum vitae risus. Maecenas bibendum odio eu erat venenatis, faucibus hendrerit felis placerat.
-
-Nunc et aliquet tortor. Quisque porttitor, justo a condimentum congue, odio dui molestie eros, sed lacinia lacus quam et risus. Quisque consectetur, felis pretium accumsan consequat, velit lacus fringilla erat, eget fringilla leo mauris a ipsum. Nam eu ultrices lectus. Nulla nisl dui, maximus at ligula in, porta sagittis erat. Cras luctus aliquam massa, et luctus libero iaculis sed. Maecenas justo metus, dapibus sed enim sit amet, luctus rutrum elit. Praesent felis mi, malesuada ultrices nibh vel, auctor rhoncus lorem. Maecenas eu ligula lorem. Suspendisse pharetra, purus sit amet aliquet laoreet, dui ligula porttitor nibh, in malesuada leo eros et sapien. In sed gravida felis, id ultricies nisi. Integer dolor justo, condimentum sit amet porttitor sed, volutpat id leo.</p>
-    </article>
-
-    <!-- Blog post 2 -->
-    <article>
-      <h2>Another Post</h2>
-      <time datetime="2025-07-05">July 5, 2025</time>
-      <p>More blog content goes here for the second post.</p>
-    </article>
+    <div class="post">
+      <div class="post-header" onclick="togglePost(this)">Harmadik bejegyzés – <time datetime="2025-07-05">2025. július 5.</time></div>
+      <div class="post-content">
+        <p>Kattints a címre a bejegyzés megtekintéséhez. Teljes szöveg külön fájlban: <a href="post3.html">post3.html</a></p>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    © 2025 My Blog. All rights reserved.
-  </footer>
-</body>
-</html>
-
+  <script>
+    function togglePost(header) {
+      const content = header.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
